@@ -2,27 +2,32 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #0f172a;
+  background: #000; /* 👈 negro puro */
   color: #fff;
 }
+
 
 /* Contenedor principal */
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* 👈 mejor que height */
+  padding: 10px; /* 👈 espacio en móviles */
 }
 
 /* Caja principal */
 .container {
   background: #1e293b;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
-  width: 350px;
+  width: 90%; /* 👈 se adapta a pantalla */
+  max-width: 400px; /* 👈 límite en PC */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
+  overflow: visible;
 }
+
 
 /* Título */
 h1 {
@@ -35,17 +40,20 @@ h1 {
 /* Input + botón */
 .input-container {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
 }
 
 input {
-  flex: 1;
+  flex: 1; /* 👈 ocupa todo el espacio disponible */
+  min-width: 0; /* 👈 evita que se desborde */
   padding: 10px;
   border-radius: 8px;
   border: none;
   outline: none;
   background: #334155;
   color: white;
+  font-size: 14px;
 }
 
 input::placeholder {
@@ -54,7 +62,8 @@ input::placeholder {
 
 /* Botón agregar */
 button {
-  padding: 10px 15px;
+  flex-shrink: 0; /* 👈 evita que se aplaste */
+  padding: 10px 14px;
   border: none;
   border-radius: 8px;
   background: #38bdf8;
@@ -62,6 +71,8 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 14px;
+  white-space: nowrap; /* 👈 evita salto de línea */
 }
 
 button:hover {
@@ -150,3 +161,40 @@ button:hover {
   color: #94a3b8;
   font-size: 14px;
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .emoji {
+    font-size: 30px;
+  }
+
+  .task {
+    font-size: 12px;
+    padding: 5px 6px 5px 12px;
+  }
+
+  .delete-btn {
+    font-size: 12px;
+    padding: 2px 8px;
+  }
+    .input-container {
+    flex-direction: column; /* 👈 se apilan */
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%; /* 👈 botón ancho tipo app */
+  }
+}
+
