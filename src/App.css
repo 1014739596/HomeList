@@ -12,8 +12,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* 👈 mejor que height */
-  padding: 10px; /* 👈 espacio en móviles */
+  min-height: 100dvh; /* 👈 clave para móviles modernos */
+  padding: 10px;
+  min-height: 100vh;
+  min-height: 100dvh; /* sobrescribe en móviles modernos */
 }
 
 /* Caja principal */
