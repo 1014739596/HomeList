@@ -11,11 +11,10 @@ body {
 .app {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100dvh; /* 👈 clave para móviles modernos */
-  padding: 10px;
+  align-items: flex-start; /* 👈 en vez de center */
   min-height: 100vh;
-  min-height: 100dvh; /* sobrescribe en móviles modernos */
+  min-height: 100dvh;
+  padding: 20px 10px;
 }
 
 /* Caja principal */
@@ -23,13 +22,12 @@ body {
   background: #1e293b;
   padding: 25px;
   border-radius: 15px;
-  width: 90%; /* 👈 se adapta a pantalla */
-  max-width: 400px; /* 👈 límite en PC */
+  width: 90%;
+  max-width: 400px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
-  overflow: visible;
+  margin-top: 20px; /* 👈 separa de arriba */
 }
-
 
 /* Título */
 h1 {
