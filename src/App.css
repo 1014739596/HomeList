@@ -1,11 +1,10 @@
 /* Fondo general */
-body {
+html, body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #000; /* 👈 negro puro */
-  color: #fff;
+  padding: 0;
+  background: #000; /* 👈 elimina el gris */
+  height: 100%;
 }
-
 
 /* Contenedor principal */
 .app {
@@ -17,6 +16,11 @@ body {
   padding: 20px 10px;
 }
 
+#root {
+  background: #000;
+  min-height: 100dvh;
+}
+
 /* Caja principal */
 .container {
   background: #1e293b;
@@ -26,7 +30,11 @@ body {
   max-width: 400px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
-  margin-top: 20px; /* 👈 separa de arriba */
+
+  min-height: calc(100dvh - 40px); /* 👈 CLAVE */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Título */
